@@ -1,5 +1,5 @@
 // Import sumValues
-import { sumValues } from "../root/first-test";
+import { sumValues } from "../root/01.first-test";
 
 // describe => Agrupa teste relacionados a um componente. 
 describe('My first test', () => {

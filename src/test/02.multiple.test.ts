@@ -3,7 +3,7 @@
         - Podemos criar múltiplos testes dentro de um describe para saber se temos funcionalidades ou valores verídicos funcionando corretamente de um certo elemento. 
 */
 
-import { actual } from "../root/multiple-tests";
+import { actual } from "../root/02.multiple-tests";
 
 describe('test product created', () => {
 
