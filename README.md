@@ -17,3 +17,8 @@
 ``` verbose:true, ```
 ```}```
 ``` export default config ```
+
+- Agora no package.json adicionar um script de execução do jest
+``` "scripts": { ```
+```     "test":"jest" ```
+``` } ```
