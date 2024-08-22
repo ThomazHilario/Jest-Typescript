@@ -17,7 +17,8 @@ describe('Check password validity', () => {
         const act = passwordCheck('1234567')
 
         // assert
-        expect(act).toBe(false)
+        expect(act.valid).toBe(false)
+        expect(act.message).toBe('Password length invalid')
     })
 
     it('Should password word more 8 length', () => {
@@ -25,7 +26,8 @@ describe('Check password validity', () => {
         const act = passwordCheck('12345@aA')
 
         // assert
-        expect(act).toBe(true)
+        expect(act.valid).toBe(true)
+        expect(act.message).toBe('This password is valid!')
     })
 
     it('Should password not letter upperCase', () => {
@@ -33,7 +35,7 @@ describe('Check password validity', () => {
         const act = passwordCheck('abcdefgh')
 
         // assert
-        expect(act).toBe(false)
+        expect(act.valid).toBe(false)
     })
 
     it('Should password letter upperCase', () => {
@@ -41,7 +43,7 @@ describe('Check password validity', () => {
         const act = passwordCheck('abcdef!H')
 
         // assert
-        expect(act).toBe(true)
+        expect(act.valid).toBe(true)
     })
 
     it('Should password not letter lowerCase', () => {
@@ -49,7 +51,7 @@ describe('Check password validity', () => {
         const act = passwordCheck('ABCDEFGH')
 
         // assert
-        expect(act).toBe(false)
+        expect(act.valid).toBe(false)
     })
 
     it('Should password letter lowerCase', () => {
@@ -57,7 +59,7 @@ describe('Check password validity', () => {
         const act = passwordCheck('abcdef%H')
 
         // assert
-        expect(act).toBe(true)
+        expect(act.valid).toBe(true)
     })
 
     it('Should return the password not a special character', () => {
@@ -65,7 +67,7 @@ describe('Check password validity', () => {
         const act = passwordCheck('abcdef4H')
 
         // assert
-        expect(act).toBe(false)
+        expect(act.valid).toBe(false)
     })
 
     it('Should return the password with a special character', () => {
@@ -73,6 +75,6 @@ describe('Check password validity', () => {
         const act = passwordCheck('bra@Zilx')
 
         // assert
-        expect(act).toBe(true)
+        expect(act.valid).toBe(true)
     })
 })
