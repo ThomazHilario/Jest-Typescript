@@ -5,7 +5,7 @@
         - Failing Test: Os casos de testes desenvolvidos.
         - Passing test: A implementação do código que passará no teste.
         - Change/Add logic: Adição de lógica ou modificação de uma lógica que pode ou não passar em um teste.
-    - Vale destacar que este ciclo se repete até que todos os bugs ou sejam resolvidos e a imlpementação do código esteja completa.    
+    - Vale destacar que este ciclo se repete até que todos os bugs ou sejam resolvidos e a implementação do código esteja completa.    
 */
 
 import { passwordCheck } from "../root/07.test-driven"
@@ -36,6 +36,7 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(false)
+        expect(act.message).toBe('This Password not one letter upperCase')
     })
 
     it('Should password letter upperCase', () => {
@@ -44,6 +45,7 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(true)
+        expect(act.message).toBe('This password is valid!')
     })
 
     it('Should password not letter lowerCase', () => {
@@ -52,6 +54,7 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(false)
+        expect(act.message).toBe('This Password not one letter LowerCase')
     })
 
     it('Should password letter lowerCase', () => {
@@ -60,6 +63,7 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(true)
+        expect(act.message).toBe('This password is valid!')
     })
 
     it('Should return the password not a special character', () => {
@@ -68,6 +72,7 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(false)
+        expect(act.message).toBe('This Password not special characteres')
     })
 
     it('Should return the password with a special character', () => {
@@ -76,5 +81,6 @@ describe('Check password validity', () => {
 
         // assert
         expect(act.valid).toBe(true)
+        expect(act.message).toBe('This password is valid!')
     })
 })
