@@ -1,4 +1,4 @@
-import { getPokemon } from "../root/08.request-test";
+import { getPokemon, showData } from "../root/08.request-test";
 
 describe('Request PokeApi', () => {
     it('should return pokemon data', () => {
@@ -25,5 +25,19 @@ describe('Request PokeApi', () => {
             // assert
             expect(error).toThrow()
         }
+    })
+
+    it('Should return name pokemon', async () => {
+        // arrange
+        const sut = showData
+
+        // act
+        const pokemonData = getPokemon('riolu')
+        const act = await sut(pokemonData)
+
+        // assert
+        expect(act).toEqual({
+            name:'riolu'
+        })
     })
 })
